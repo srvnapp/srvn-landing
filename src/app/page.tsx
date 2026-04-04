@@ -3,19 +3,25 @@ import WaitlistForm from "./WaitlistForm";
 
 const FEATURES = [
   {
-    num: "01",
+    letter: "S",
     title: "Search",
-    desc: "Find the perfect restaurant for any mood or occasion",
+    desc: "Find the perfect restaurant for any mood, cuisine, or occasion",
   },
   {
-    num: "02",
+    letter: "R",
     title: "Review",
-    desc: "Share honest dining experiences with people you trust",
+    desc: "Share honest dining experiences with people whose taste you trust",
   },
   {
-    num: "03",
+    letter: "V",
+    title: "Visit",
+    tag: "Events",
+    desc: "Create and discover dining events — from supper clubs to group reservations",
+  },
+  {
+    letter: "N",
     title: "Navigate",
-    desc: "Track where you've been and discover what's next",
+    desc: "Track where you've been and discover what's next on your dining map",
   },
 ] as const;
 
@@ -99,10 +105,15 @@ export default function Home() {
       {/* Features */}
       <div className="features">
         {FEATURES.map((f) => (
-          <div key={f.num} className="feature">
-            <div className="feature-num">{f.num}</div>
-            <span className="feature-title">{f.title}</span>
-            <span className="feature-desc">{f.desc}</span>
+          <div key={f.letter} className="feat">
+            <div className="feat-letter">{f.letter}</div>
+            <div>
+              <span className="feat-title">
+                {f.title}
+                {"tag" in f && <span className="feat-new">{f.tag}</span>}
+              </span>
+              <span className="feat-desc">{f.desc}</span>
+            </div>
           </div>
         ))}
       </div>
