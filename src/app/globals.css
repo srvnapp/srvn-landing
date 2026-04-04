@@ -231,16 +231,19 @@ h1 em {
 
 input[type="email"] {
   flex: 1;
-  height: 50px;
-  padding: 0 1.125rem;
+  min-height: 52px;
+  padding: 14px 1.125rem;
   border: 1.5px solid var(--border);
-  border-radius: 13px;
-  font-size: 15px;
+  border-radius: 999px;
+  font-size: 16px;
+  line-height: 1.35;
   color: var(--brown);
   background: var(--cream);
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
   font-family: var(--font-inter), sans-serif;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 input[type="email"]:focus {
@@ -253,19 +256,20 @@ input[type="email"]::placeholder {
 }
 
 button[type="submit"] {
-  height: 50px;
-  padding: 0 1.625rem;
+  min-height: 52px;
+  padding: 14px 1.625rem;
   background: var(--brown);
   color: var(--cream);
   font-size: 14px;
   font-weight: 600;
   border: none;
-  border-radius: 13px;
+  border-radius: 999px;
   cursor: pointer;
   white-space: nowrap;
   font-family: var(--font-inter), sans-serif;
   letter-spacing: 0.01em;
   transition: background 0.2s, transform 0.1s;
+  line-height: 1.35;
 }
 
 button[type="submit"]:hover {
@@ -462,9 +466,10 @@ footer a:hover {
   .input-row {
     flex-direction: column;
   }
-  button[type="submit"] {
+  .input-row input[type="email"],
+  .input-row button[type="submit"] {
     width: 100%;
-    height: 48px;
+    min-height: 52px;
   }
   .features {
     grid-template-columns: 1fr;
