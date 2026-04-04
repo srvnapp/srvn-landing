@@ -1,65 +1,127 @@
-import Image from "next/image";
+import Link from "next/link";
+import WaitlistForm from "./WaitlistForm";
+
+const FEATURES = [
+  {
+    num: "01",
+    title: "Search",
+    desc: "Find the perfect restaurant for any mood or occasion",
+  },
+  {
+    num: "02",
+    title: "Review",
+    desc: "Share honest dining experiences with people you trust",
+  },
+  {
+    num: "03",
+    title: "Navigate",
+    desc: "Track where you've been and discover what's next",
+  },
+] as const;
+
+const AVATARS = [
+  { initials: "JR", color: "#c84b2f" },
+  { initials: "AM", color: "#3d1f0d" },
+  { initials: "SK", color: "#2d6a4f" },
+  { initials: "PL", color: "#6d4c9e" },
+] as const;
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="container">
+      {/* Nav */}
+      <nav>
+        <Link className="nav-logo" href="#">
+          SRVN
+        </Link>
+        <div className="nav-badge">
+          <span className="nav-dot" />
+          Coming Soon
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </nav>
+
+      {/* Hero */}
+      <div className="hero">
+        <div className="eyebrow">
+          <div className="eyebrow-line" />
+          <span className="eyebrow-text">Social Restaurant Venue Network</span>
+          <div className="eyebrow-line" />
         </div>
-      </main>
+
+        <h1>
+          Where great
+          <br />
+          meals <em>begin.</em>
+        </h1>
+
+        <p className="subtitle">
+          Discover the restaurants your city is talking about. Read real reviews,
+          track your dining adventures, and get recommendations that actually
+          know your taste.
+        </p>
+
+        <div className="smart-pill">
+          <span className="smart-icon">✦</span>
+          <span className="smart-text">
+            The more you use SRVN, the smarter it gets.
+          </span>
+        </div>
+      </div>
+
+      {/* Waitlist Form (client component) */}
+      <WaitlistForm />
+
+      {/* Social Proof */}
+      <div className="proof">
+        <div className="proof-avatars">
+          {AVATARS.map((a) => (
+            <div
+              key={a.initials}
+              className="avatar"
+              style={{ background: a.color }}
+            >
+              {a.initials}
+            </div>
+          ))}
+        </div>
+        <span className="proof-text">
+          <strong>Food lovers</strong> already on the list
+        </span>
+      </div>
+
+      {/* Divider */}
+      <div className="divider">
+        <div className="divider-line" />
+        <span className="divider-label">What SRVN does</span>
+        <div className="divider-line" />
+      </div>
+
+      {/* Features */}
+      <div className="features">
+        {FEATURES.map((f) => (
+          <div key={f.num} className="feature">
+            <div className="feature-num">{f.num}</div>
+            <span className="feature-title">{f.title}</span>
+            <span className="feature-desc">{f.desc}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Quote */}
+      <div className="quote">
+        <div className="quote-text">
+          &ldquo;The best restaurant recommendations come from people who eat
+          the way you do — not algorithms that don&apos;t know you.&rdquo;
+        </div>
+        <div className="quote-author">— The idea behind SRVN</div>
+      </div>
+
+      {/* Footer */}
+      <footer>
+        &copy; 2026 SRVN Digital Inc. &nbsp;&middot;&nbsp;
+        <Link href="/privacy">Privacy</Link> &nbsp;&middot;&nbsp;
+        <a href="mailto:hello@srvn.com">Contact</a>
+      </footer>
     </div>
   );
 }
