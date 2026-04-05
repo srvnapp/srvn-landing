@@ -61,9 +61,9 @@ export default function Home() {
         </h1>
 
         <p className="subtitle">
-          Discover the restaurants your city is talking about. Read real reviews,
-          track your dining adventures, and get recommendations that actually
-          know your taste.
+          Discover the restaurants your city is talking about. Read real
+          reviews, track your dining adventures, and get recommendations that
+          actually know your taste.
         </p>
 
         <div className="smart-pill">
@@ -75,10 +75,10 @@ export default function Home() {
       </div>
 
       {/* Waitlist Form (client component) */}
-      <WaitlistForm />
+      {/* <WaitlistForm /> */}
 
       {/* Social Proof */}
-      <div className="proof">
+      {/* <div className="proof">
         <div className="proof-avatars">
           {AVATARS.map((a) => (
             <div
@@ -93,7 +93,7 @@ export default function Home() {
         <span className="proof-text">
           <strong>Food lovers</strong> already on the list
         </span>
-      </div>
+      </div> */}
 
       {/* Divider */}
       <div className="divider">
