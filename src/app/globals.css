@@ -324,6 +324,79 @@ button[type="submit"].success {
   text-align: left;
 }
 
+.error-msg {
+  font-size: 13.5px;
+  color: var(--terra);
+  font-weight: 600;
+  margin-top: 0.875rem;
+  text-align: left;
+}
+
+/* ── CELEBRATION CARD (waitlist success) ── */
+.celebrate {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 48px 40px;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.celebrate-brand {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-strong);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.celebrate-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 32px;
+}
+
+.celebrate-check {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--terra);
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-strong);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.celebrate-title {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-strong);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.celebrate-text {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.celebrate-text:last-child {
+  margin-bottom: 0;
+}
+
 /* ── SOCIAL PROOF ── */
 .proof {
   display: flex;
@@ -643,6 +716,12 @@ footer a:hover {
   }
   nav {
     margin-bottom: 3rem;
+  }
+  .celebrate {
+    padding: 40px 24px;
+  }
+  .celebrate-title {
+    font-size: 24px;
   }
   .legal-header {
     margin-bottom: 2rem;

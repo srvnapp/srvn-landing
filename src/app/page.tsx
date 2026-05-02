@@ -76,7 +76,7 @@ export default function Home() {
       </div>
 
       {/* Waitlist Form (client component) */}
-      {/* <WaitlistForm /> */}
+      <WaitlistForm />
 
       {/* Social Proof */}
       {/* <div className="proof">

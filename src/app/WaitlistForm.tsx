@@ -2,30 +2,77 @@
 
 import { useState, type FormEvent } from "react";
 
-export default function WaitlistForm() {
-  const [submitted, setSubmitted] = useState(false);
+type Status = "idle" | "submitting" | "success" | "error";
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+export default function WaitlistForm() {
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
-    const email = new FormData(form).get("email") as string;
+    const email = (new FormData(form).get("email") as string)?.trim();
 
     if (!email || !email.includes("@")) return;
 
-    // ── Wire up your email capture here ──────────────────────────
-    // Example with Loops:
-    // fetch('https://app.loops.so/api/v1/contacts/create', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'Authorization': 'Bearer YOUR_LOOPS_API_KEY'
-    //   },
-    //   body: JSON.stringify({ email, source: 'waitlist' })
-    // });
-    // ─────────────────────────────────────────────────────────────
+    setStatus("submitting");
+    setErrorMsg("");
 
-    setSubmitted(true);
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/waitlist/signup`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        },
+      );
+
+      if (res.ok) {
+        setStatus("success");
+        return;
+      }
+
+      if (res.status === 422) {
+        setStatus("error");
+        setErrorMsg("Please enter a valid email address.");
+        return;
+      }
+
+      if (res.status === 429) {
+        setStatus("error");
+        setErrorMsg("Too many requests. Please try again in a moment.");
+        return;
+      }
+
+      setStatus("error");
+      setErrorMsg("Something went wrong. Please try again.");
+    } catch {
+      setStatus("error");
+      setErrorMsg("Something went wrong. Please try again.");
+    }
   }
+
+  if (status === "success") {
+    return (
+      <div className="celebrate">
+        <div className="celebrate-brand">srvn</div>
+        <div className="celebrate-tag">Social Restaurant Venue Network</div>
+        <div className="celebrate-check" aria-hidden="true">
+          ✓
+        </div>
+        <h2 className="celebrate-title">You&rsquo;re on the list.</h2>
+        <p className="celebrate-text">
+          Check your inbox for a confirmation from SRVN.
+        </p>
+        <p className="celebrate-text">
+          We&rsquo;ll be in touch when we&rsquo;re ready to launch.
+        </p>
+      </div>
+    );
+  }
+
+  const submitting = status === "submitting";
 
   return (
     <div className="form-card">
@@ -41,14 +88,10 @@ export default function WaitlistForm() {
             placeholder="your@email.com"
             autoComplete="email"
             required
-            disabled={submitted}
+            disabled={submitting}
           />
-          <button
-            type="submit"
-            className={submitted ? "success" : ""}
-            disabled={submitted}
-          >
-            {submitted ? "Joined!" : "Join waitlist"}
+          <button type="submit" disabled={submitting}>
+            {submitting ? "Joining…" : "Join waitlist"}
           </button>
         </div>
       </form>
@@ -56,11 +99,7 @@ export default function WaitlistForm() {
         No spam, ever. First access goes to the waitlist — we&apos;ll reach out
         when we&apos;re ready.
       </p>
-      {submitted && (
-        <p className="success-msg">
-          &#10003; You&apos;re on the list — we&apos;ll be in touch soon.
-        </p>
-      )}
+      {status === "error" && <p className="error-msg">{errorMsg}</p>}
     </div>
   );
 }
