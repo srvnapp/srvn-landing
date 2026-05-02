@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "./Logo";
 import WaitlistForm from "./WaitlistForm";
 
 const FEATURES = [
@@ -38,7 +39,7 @@ export default function Home() {
       {/* Nav */}
       <nav>
         <Link className="nav-logo" href="#">
-          SRVN
+          srvn
         </Link>
         <div className="nav-badge">
           <span className="nav-dot" />
@@ -69,7 +70,7 @@ export default function Home() {
         <div className="smart-pill">
           <span className="smart-icon">✦</span>
           <span className="smart-text">
-            The more you use SRVN, the smarter it gets.
+            The more you use srvn, the smarter it gets.
           </span>
         </div>
       </div>
@@ -98,7 +99,7 @@ export default function Home() {
       {/* Divider */}
       <div className="divider">
         <div className="divider-line" />
-        <span className="divider-label">What SRVN does</span>
+        <span className="divider-label">what srvn does</span>
         <div className="divider-line" />
       </div>
 
@@ -124,13 +125,13 @@ export default function Home() {
           &ldquo;The best restaurant recommendations come from people who eat
           the way you do — not algorithms that don&apos;t know you.&rdquo;
         </div>
-        <div className="quote-author">— The idea behind SRVN</div>
+        <div className="quote-author">— The idea behind srvn</div>
       </div>
 
       {/* Footer */}
       <footer>
         &copy; 2026 SRVN Digital Inc. &nbsp;&middot;&nbsp;
-        <Link href="/privacy">Privacy</Link> &nbsp;&middot;&nbsp;
+        <Link href="/terms">Terms of Use</Link> &nbsp;&middot;&nbsp;
         <a href="mailto:hello@srvn.com">Contact</a>
       </footer>
     </div>
