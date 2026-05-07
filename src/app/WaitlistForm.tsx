@@ -103,7 +103,7 @@ export default function WaitlistForm({
       {showMeta && (
         <div className="email-meta">
           <span className="email-note">No spam. Real updates only.</span>
-          <Link href="/how-it-works" className="more-link">
+          <Link href="/" className="more-link">
             See how it works
           </Link>
         </div>
