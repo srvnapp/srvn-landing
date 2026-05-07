@@ -1,10 +1,19 @@
 "use client";
 
+import Link from "next/link";
 import { useState, type FormEvent } from "react";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export default function WaitlistForm() {
+type Props = {
+  buttonLabel?: string;
+  showMeta?: boolean;
+};
+
+export default function WaitlistForm({
+  buttonLabel = "Join the waitlist",
+  showMeta = true,
+}: Props = {}) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -56,7 +65,7 @@ export default function WaitlistForm() {
   if (status === "success") {
     return (
       <div className="celebrate">
-        <div className="celebrate-brand">srvn</div>
+        <div className="celebrate-brand">Srvn</div>
         <div className="celebrate-tag">Social Restaurant Venue Network</div>
         <div className="celebrate-check" aria-hidden="true">
           ✓
@@ -75,31 +84,31 @@ export default function WaitlistForm() {
   const submitting = status === "submitting";
 
   return (
-    <div className="form-card">
-      <div className="form-header">
-        <div className="form-dot" />
-        <span className="form-label">Reserve your spot — launching soon</span>
-      </div>
-      <form onSubmit={handleSubmit}>
-        <div className="input-row">
-          <input
-            type="email"
-            name="email"
-            placeholder="your@email.com"
-            autoComplete="email"
-            required
-            disabled={submitting}
-          />
-          <button type="submit" disabled={submitting}>
-            {submitting ? "Joining…" : "Join waitlist"}
-          </button>
-        </div>
+    <>
+      <form className="email-form" onSubmit={handleSubmit}>
+        <input
+          className="email-input"
+          type="email"
+          name="email"
+          placeholder="you@example.com"
+          aria-label="Email"
+          autoComplete="email"
+          required
+          disabled={submitting}
+        />
+        <button className="email-btn" type="submit" disabled={submitting}>
+          {submitting ? "Joining…" : buttonLabel}
+        </button>
       </form>
-      <p className="form-note">
-        No spam, ever. First access goes to the waitlist — we&apos;ll reach out
-        when we&apos;re ready.
-      </p>
+      {showMeta && (
+        <div className="email-meta">
+          <span className="email-note">No spam. Real updates only.</span>
+          <Link href="/how-it-works" className="more-link">
+            See how it works
+          </Link>
+        </div>
+      )}
       {status === "error" && <p className="error-msg">{errorMsg}</p>}
-    </div>
+    </>
   );
 }
