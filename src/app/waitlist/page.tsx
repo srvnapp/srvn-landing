@@ -22,6 +22,9 @@ export default function WaitlistPage() {
             <Link className="nav-link" href="/">
               How it works
             </Link>
+            <Link className="nav-link" href="/demo">
+              See it in action
+            </Link>
             <div className="nav-badge">
               <span className="nav-dot" />
               Coming Soon

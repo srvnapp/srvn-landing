@@ -145,9 +145,14 @@ export default function Home() {
           <Link href="/" className="wordmark">
             Srvn
           </Link>
-          <Link href="/waitlist" className="nav-cta">
-            Join waitlist
-          </Link>
+          <div className="nav-links">
+            <Link href="/demo" className="nav-link">
+              See it in action
+            </Link>
+            <Link href="/waitlist" className="nav-cta">
+              Join waitlist
+            </Link>
+          </div>
         </div>
       </nav>
 
