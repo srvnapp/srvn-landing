@@ -62,23 +62,20 @@ export default function SharePage({
         {!hasStore && (
           <p>Download links will appear here when the app is available.</p>
         )}
-        <div className={styles.downloadActions}>
-          {config.iosStoreUrl && (
-            <a className={styles.primaryLink} href={config.iosStoreUrl} rel="noreferrer noopener" referrerPolicy="no-referrer">
-              Download for iPhone <span aria-hidden="true">↗</span>
-            </a>
-          )}
-          {config.androidStoreUrl && (
-            <a className={styles.primaryLink} href={config.androidStoreUrl} rel="noreferrer noopener" referrerPolicy="no-referrer">
-              Download for Android <span aria-hidden="true">↗</span>
-            </a>
-          )}
-          {!hasStore && (
-            <Link className={styles.primaryLink} href="/waitlist" prefetch={false}>
-              Join the waitlist <span aria-hidden="true">→</span>
-            </Link>
-          )}
-        </div>
+        {hasStore && (
+          <div className={styles.downloadActions}>
+            {config.iosStoreUrl && (
+              <a className={styles.primaryLink} href={config.iosStoreUrl} rel="noreferrer noopener" referrerPolicy="no-referrer">
+                Download for iPhone <span aria-hidden="true">↗</span>
+              </a>
+            )}
+            {config.androidStoreUrl && (
+              <a className={styles.primaryLink} href={config.androidStoreUrl} rel="noreferrer noopener" referrerPolicy="no-referrer">
+                Download for Android <span aria-hidden="true">↗</span>
+              </a>
+            )}
+          </div>
+        )}
         {hasStore && (!config.iosStoreUrl || !config.androidStoreUrl) && (
           <p className={styles.availability}>
             {!config.iosStoreUrl ? "The iPhone" : "The Android"} download link is coming soon.
