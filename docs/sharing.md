@@ -15,7 +15,7 @@ Only these four types are supported. Tokens must be 1–64 ASCII letters, digits
 
 The page explains that sign-in or sign-up is required. It offers an explicit **Open SRVN** action with the original kind/token and instructions to install SRVN, return to the original message, and tap the same link again. The custom scheme is attempted only after a click. There are no automatic redirects, install matching, or timers.
 
-**SRVN is not in the stores yet.** Leave both store URL variables empty to show “SRVN is coming soon” and the existing waitlist link. Configure each platform independently once its real listing has been verified. If only one is released, the other platform gets accurate availability copy. Desktop visitors see both configured store choices.
+**SRVN is not in the stores yet.** Leave both store URL variables empty to show “SRVN is coming soon” without a waitlist action. Waitlist signup remains on the main website. Configure each platform independently once its real listing has been verified. If only one is released, the other platform gets accurate availability copy. Desktop visitors see both configured store choices.
 
 Share pages have generic metadata and imagery, `noindex`/no-follow directives, `no-referrer`, and dynamic responses with no-store caching. They contain no content preview or content resolver request. Repeated visits do not consume or refresh a token. Authentication, token expiry, and the final content destination belong to the backend/native app.
 

@@ -17,7 +17,7 @@ for (const kind of SHARE_KINDS) {
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(`Someone shared a ${kind} with you on SRVN.`);
     await expect(page.getByText("To view it, open SRVN and sign in or create an account.")).toBeVisible();
     await expect(page.getByRole("heading", { name: "SRVN is coming soon" })).toBeVisible();
-    await expect(page.getByRole("link", { name: "Join the waitlist" })).toHaveAttribute("href", "/waitlist");
+    await expect(page.locator('a[href="/waitlist"]')).toHaveCount(0);
     await expect(page.getByRole("link", { name: "Open SRVN" })).toHaveAttribute("href", `srvn-dev://s/${kind}/${token}`);
     await expect(page.getByText(/then return to the original message and tap this link again/)).toBeVisible();
     await expect(page.locator('a[href*="apps.apple.com"], a[href*="play.google.com"]')).toHaveCount(0);
