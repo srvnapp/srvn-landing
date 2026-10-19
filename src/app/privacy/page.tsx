@@ -25,7 +25,7 @@ export default function Privacy() {
         <header className="legal-header">
           <h1>Privacy Policy</h1>
           <p className="legal-meta">
-            Effective: August 12, 2026 · srvn Digital Inc.
+            Effective: October 19, 2026 · srvn Digital Inc.
           </p>
         </header>
 
@@ -76,6 +76,18 @@ export default function Privacy() {
         </section>
 
         <section>
+          <h2>Website Analytics</h2>
+          <p>
+            We use Vercel Web Analytics to understand visits to our public
+            website pages, including page views, referrers, approximate region,
+            and browser and device types. Sharing-link pages are excluded from
+            analytics. We remove query strings and URL fragments from the page
+            URLs we record. We do not send waitlist form contents or shared
+            content to this analytics service.
+          </p>
+        </section>
+
+        <section>
           <h2>What We Don&rsquo;t Do</h2>
           <ul>
             <li>We do not sell your personal information.</li>
@@ -112,7 +124,8 @@ export default function Privacy() {
           <h2>Sharing</h2>
           <p>
             We share data only with service providers who help us run srvn —
-            such as cloud hosting and crash reporting (Sentry) — under
+            such as cloud hosting, crash reporting (Sentry), and website
+            analytics (Vercel) — under
             agreements that limit how they may use it, and when required by
             law. If srvn is involved in a merger or acquisition, your data may
             transfer with the service; we will notify you before a materially

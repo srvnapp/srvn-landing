@@ -1,0 +1,70 @@
+.shell {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 640px;
+}
+
+.nav { margin-bottom: 28px; gap: 24px; }
+.supportLink { color: var(--muted); font-size: 13px; text-decoration: none; padding: 12px 0; }
+.supportLink:hover { color: var(--text-strong); }
+.card {
+  padding: clamp(28px, 6vw, 52px);
+  border: 1px solid var(--border-strong);
+  border-radius: 28px;
+  background: linear-gradient(145deg, #22201e, var(--bg-elev) 45%);
+  box-shadow: var(--shadow);
+}
+.shareMark {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  color: var(--terra);
+  background: var(--terra-soft);
+  border: 1px solid var(--terra-border);
+  border-radius: 16px;
+  margin-bottom: 28px;
+}
+.eyebrow { color: var(--terra); font: 11px var(--mono); text-transform: uppercase; letter-spacing: .15em; margin-bottom: 16px; }
+.heading { font-family: var(--font-playfair), Georgia, serif; color: var(--text-strong); font-size: clamp(32px, 6vw, 46px); line-height: 1.17; letter-spacing: -.035em; margin-bottom: 18px; }
+.heading em { color: var(--terra); }
+.intro { color: #b5b5b5; font-size: 16px; line-height: 1.65; margin-bottom: 32px; max-width: 440px; }
+.downloadSection { padding: 24px; background: var(--cream-soft); border: 1px solid var(--border); border-radius: 16px; }
+.downloadSection h2, .stepsSection h2 { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text-strong); }
+.downloadSection > p { margin-top: 7px; font-size: 14px; line-height: 1.6; color: #b5b5b5; }
+.downloadActions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+.primaryLink, .openLink { display: inline-flex; justify-content: center; align-items: center; gap: 20px; min-height: 48px; font-size: 14px; font-weight: 600; line-height: 1.4; padding: 13px 20px; border-radius: 11px; text-decoration: none; transition: background .15s; }
+.primaryLink { color: #21130b; background: var(--terra); flex: 1; }
+.primaryLink:hover { background: #ffa36f; }
+.primaryLink span, .openLink span { margin-left: auto; }
+.availability { margin-top: 14px; }
+.stepsSection { margin-top: 30px; }
+.returnInstruction { margin-top: 9px; color: #b5b5b5; font-size: 14px; line-height: 1.65; }
+.steps { list-style: none; margin-top: 20px; display: grid; gap: 15px; }
+.steps li { display: flex; align-items: start; gap: 13px; }
+.steps li > span { display: grid; place-items: center; flex: 0 0 25px; height: 25px; border: 1px solid var(--border-strong); border-radius: 50%; color: var(--terra); font: 12px var(--mono); }
+.steps p { font-size: 13px; line-height: 1.7; padding-top: 2px; color: #c7c7c7; }
+.openSection { margin-top: 0; }
+.smallLabel { color: #b5b5b5; font-size: 13px; margin-bottom: 12px; }
+.openLink { width: 100%; color: var(--text-strong); background: transparent; border: 1px solid var(--border-strong); }
+.openLink:hover { background: var(--card-2); }
+.help, .browserHelp { color: #aaa; font-size: 12px; line-height: 1.7; margin-top: 14px; }
+.browserHelp { margin-top: 14px; margin-bottom: 28px; }
+.footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 26px; padding: 0 4px; font-size: 11px; color: #aaa; }
+.footer div { display: flex; gap: 20px; }
+.footer a { text-decoration: none; color: #b5b5b5; }
+.footer a:hover { color: white; }
+.shell a:focus-visible { outline: 2px solid var(--terra); outline-offset: 5px; }
+
+@media (max-width: 440px) {
+  .card { border-radius: 20px; padding: 26px 22px; }
+  .nav { margin-bottom: 20px; }
+  .downloadSection { padding: 18px; }
+  .downloadActions { flex-direction: column; }
+  .footer { justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shell a { transition: none; }
+}
