@@ -19,6 +19,21 @@ The page explains that sign-in or sign-up is required. It offers an explicit **O
 
 Share pages have generic metadata and imagery, `noindex`/no-follow directives, `no-referrer`, and dynamic responses with no-store caching. They contain no content preview or content resolver request. Repeated visits do not consume or refresh a token. Authentication, token expiry, and the final content destination belong to the backend/native app.
 
+### Messaging previews
+
+Page, Open Graph, and Twitter titles identify the sharing type:
+
+| Type | Preview title |
+| --- | --- |
+| Profile | View this profile on SRVN |
+| Review | Read this review on SRVN |
+| Restaurant | Explore this restaurant on SRVN |
+| Dish | Check out this dish on SRVN |
+
+All four use the same square 1200 × 1200 PNG at `/s/opengraph-image`, with the existing SRVN logo, wordmark, and brand colors. This public image has no token or personal content and needs no authentication. Next.js supplies the Open Graph image URL and dimensions; Twitter metadata points to the same asset. Metadata uses the configured sharing origin rather than the incoming Host header.
+
+Messages and other receiving apps choose the card layout and may cache existing previews. After deployment, test a newly generated or previously unpreviewed link in Messages to verify the recipient's actual card. The website update does not require a native rebuild; authentication and app opening continue to use the existing flow.
+
 ## Configuration
 
 These variables are read on the server at request time. They are not `NEXT_PUBLIC_` variables.

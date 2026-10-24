@@ -15,7 +15,12 @@ export function generateMetadata(): Metadata {
     referrer: "no-referrer",
     robots: { index: false, follow: false, nocache: true },
     openGraph: { title, description, type: "website", siteName: "SRVN" },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [{ url: "/s/opengraph-image", alt: "SRVN logo and wordmark" }],
+    },
   };
 }
 
