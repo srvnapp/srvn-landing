@@ -27,7 +27,7 @@ export default function SharingPreviewImage() {
       >
         <Logo size={360} />
         <div style={{ display: "flex", fontSize: 144, fontWeight: 700, lineHeight: 1, letterSpacing: "-0.04em" }}>
-          srvn
+          SRVN
         </div>
       </div>
     ),
