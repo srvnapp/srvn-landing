@@ -10,7 +10,7 @@ function ShareFrame({ children }: { children: React.ReactNode }) {
     <div className={styles.shell}>
       <nav className={styles.nav} aria-label="Main navigation">
         <Link href="/" className="nav-logo" aria-label="SRVN home" prefetch={false}>
-          <Logo size={30} /> <span aria-hidden="true">srvn</span>
+          <Logo size={30} /> <span aria-hidden="true">SRVN</span>
         </Link>
         <Link className={styles.supportLink} href="/support" prefetch={false}>Need help?</Link>
       </nav>

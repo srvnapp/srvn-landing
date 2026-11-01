@@ -4,9 +4,9 @@ import AgentCard from "../AgentCard";
 import WaitlistForm from "../WaitlistForm";
 
 export const metadata: Metadata = {
-  title: "Join the waitlist — Srvn",
+  title: "Join the waitlist — SRVN",
   description:
-    "Reserve your spot. Srvn learns your taste, understands your group, and helps you choose where to eat — in seconds, not hours.",
+    "Reserve your spot. SRVN learns your taste, understands your group, and helps you choose where to eat — in seconds, not hours.",
 };
 
 export default function WaitlistPage() {
@@ -16,7 +16,7 @@ export default function WaitlistPage() {
       <nav className="nav-top">
         <div className="nav-inner">
           <Link className="wordmark" href="/">
-            Srvn
+            SRVN
           </Link>
           <div className="nav-links">
             <Link className="nav-link" href="/">
@@ -48,14 +48,14 @@ export default function WaitlistPage() {
                 </h1>
 
                 <p className="subtitle">
-                  Srvn learns your taste, understands your group, and helps you
+                  SRVN learns your taste, understands your group, and helps you
                   choose where to eat — in seconds, not hours.
                 </p>
 
                 <div className="smart-pill">
                   <span className="smart-icon">✦</span>
                   <span className="smart-text">
-                    The more you use srvn, the smarter it gets.
+                    The more you use SRVN, the smarter it gets.
                   </span>
                 </div>
 
@@ -80,7 +80,7 @@ export default function WaitlistPage() {
       <footer>
         &copy; 2026 SRVN Digital Inc. &nbsp;&middot;&nbsp;
         <Link href="/terms">Terms of Use</Link> &nbsp;&middot;&nbsp;
-        <a href="mailto:hello@srvn.com">Contact</a>
+        <Link href="/support">Contact</Link>
       </footer>
     </div>
   );

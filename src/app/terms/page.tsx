@@ -3,8 +3,8 @@ import Link from "next/link";
 import Logo from "../Logo";
 
 export const metadata: Metadata = {
-  title: "Terms of Use — srvn",
-  description: "srvn waitlist terms and conditions.",
+  title: "Terms of Use — SRVN",
+  description: "SRVN waitlist terms and conditions.",
 };
 
 export default function Terms() {
@@ -12,7 +12,7 @@ export default function Terms() {
     <div className="container">
       <nav>
         <Link className="nav-logo" href="/">
-          srvn
+          SRVN
         </Link>
         <Link className="back-link" href="/">
           ← Back
@@ -23,14 +23,14 @@ export default function Terms() {
         <header className="legal-header">
           <h1>Waitlist — Terms &amp; Conditions</h1>
           <p className="legal-meta">
-            Last updated: April 2026 · srvn Digital Inc.
+            Last updated: April 2026 · SRVN Digital Inc.
           </p>
         </header>
 
         <section>
           <h2>Who We Are</h2>
           <p>
-            SRVN Digital Inc. (&ldquo;srvn&rdquo;, &ldquo;we&rdquo;,
+            SRVN Digital Inc. (&ldquo;SRVN&rdquo;, &ldquo;we&rdquo;,
             &ldquo;us&rdquo;, &ldquo;our&rdquo;) operates a dining discovery and
             decision platform. For any privacy or communications enquiries,
             please contact us at:{" "}
@@ -41,14 +41,14 @@ export default function Terms() {
         <section>
           <h2>What You&rsquo;re Signing Up For</h2>
           <p>
-            By submitting your details to the srvn waitlist, you consent to srvn
+            By submitting your details to the SRVN waitlist, you consent to SRVN
             contacting you via email and/or phone (including SMS/text message),
             depending on the contact information you provide, about:
           </p>
           <ul>
             <li>Your waitlist position and early access invitations</li>
             <li>Product updates, launch announcements, and new feature news</li>
-            <li>Relevant promotions, offers, or events from srvn</li>
+            <li>Relevant promotions, offers, or events from SRVN</li>
           </ul>
         </section>
 
@@ -150,7 +150,7 @@ export default function Terms() {
           <h2>Applicable Law</h2>
           <p>
             These terms are governed by the laws of the Province of Ontario and
-            the federal laws of Canada applicable therein. srvn is committed to
+            the federal laws of Canada applicable therein. SRVN is committed to
             compliance with applicable privacy and anti-spam laws across all
             jurisdictions in which it operates.
           </p>
@@ -165,7 +165,7 @@ export default function Terms() {
       <footer>
         &copy; 2026 SRVN Digital Inc. &nbsp;&middot;&nbsp;
         <Link href="/terms">Terms of Use</Link> &nbsp;&middot;&nbsp;
-        <a href="mailto:privacy@srvnapp.com">Contact</a>
+        <Link href="/support">Contact</Link>
       </footer>
     </div>
   );

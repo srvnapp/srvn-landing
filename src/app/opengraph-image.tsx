@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Srvn — Your AI Dining Agent";
+export const alt = "SRVN — Your AI Dining Agent";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -64,7 +64,7 @@ export default function OpengraphImage() {
             marginBottom: 28,
           }}
         >
-          Srvn
+          SRVN
         </div>
 
         {/* Tagline */}

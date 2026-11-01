@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
-    "test": "npm run build && playwright test"
+    "test": "NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:3190 npm run build && playwright test"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

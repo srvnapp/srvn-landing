@@ -19,13 +19,13 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://srvnapp.com"),
-  title: "Srvn — Your AI Dining Agent",
+  title: "SRVN — Your AI Dining Agent",
   description:
-    "Srvn learns your taste, understands your group, and helps you choose where to eat — in seconds, not hours. Join the waitlist.",
+    "SRVN learns your taste, understands your group, and helps you choose where to eat — in seconds, not hours. Join the waitlist.",
   openGraph: {
-    title: "Srvn — Your AI Dining Agent",
+    title: "SRVN — Your AI Dining Agent",
     description:
-      "Every dining app shows what's popular. Srvn learns what you'd actually like. Join the waitlist.",
+      "Every dining app shows what's popular. SRVN learns what you'd actually like. Join the waitlist.",
     type: "website",
   },
 };

@@ -1,0 +1,132 @@
+.form {
+  padding: 2rem 0 2.5rem;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+}
+
+.optional {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  background: var(--input);
+  color: var(--text);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+select.input {
+  color-scheme: dark;
+  cursor: pointer;
+}
+
+.input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+textarea.input {
+  resize: vertical;
+}
+
+.input:focus-visible, .button:focus-visible, .errorSummary:focus-visible, .success:focus-visible {
+  outline: 2px solid var(--terra);
+  outline-offset: 4px;
+}
+
+.input[aria-invalid] {
+  border-color: #ffb4ab;
+}
+
+.input:disabled {
+  opacity: 0.65;
+}
+
+.form .note {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.form .error {
+  color: #ffb4ab;
+  margin: 0.5rem 0 0;
+  font-size: 13px;
+}
+
+.errorSummary {
+  color: #ffb4ab;
+  background: rgba(255, 180, 171, 0.06);
+  border: 1px solid rgba(255, 180, 171, 0.4);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.button {
+  min-height: 48px;
+  border: none;
+  border-radius: 10px;
+  padding: 0.875rem 1.5rem;
+  background: var(--terra);
+  color: var(--bg);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:hover:not(:disabled) {
+  background: #ffa46f;
+}
+
+.button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.success {
+  margin: 2rem 0 2.5rem;
+  padding: 1.5rem;
+  background: var(--mint-soft);
+  border: 1px solid var(--mint-border);
+  border-radius: 12px;
+}
+
+.success .successTitle::before {
+  content: none;
+}
+
+@media (max-width: 540px) {
+  .fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .button {
+    width: 100%;
+  }
+}

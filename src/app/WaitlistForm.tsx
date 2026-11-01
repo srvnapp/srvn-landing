@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, type FormEvent } from "react";
+import { useState, type SubmitEvent } from "react";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -17,7 +17,7 @@ export default function WaitlistForm({
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const email = (new FormData(form).get("email") as string)?.trim();
@@ -65,7 +65,7 @@ export default function WaitlistForm({
   if (status === "success") {
     return (
       <div className="celebrate">
-        <div className="celebrate-brand">Srvn</div>
+        <div className="celebrate-brand">SRVN</div>
         <div className="celebrate-tag">Social Restaurant Venue Network</div>
         <div className="celebrate-check" aria-hidden="true">
           ✓

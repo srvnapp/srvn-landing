@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — srvn",
-  description: "How srvn collects, uses, and protects your information.",
+  title: "Privacy Policy — SRVN",
+  description: "How SRVN collects, uses, and protects your information.",
 };
 
 // This is the page App Store Connect's Privacy Policy URL points at, and the
@@ -14,7 +14,7 @@ export default function Privacy() {
     <div className="container">
       <nav>
         <Link className="nav-logo" href="/">
-          srvn
+          SRVN
         </Link>
         <Link className="back-link" href="/">
           ← Back
@@ -25,15 +25,15 @@ export default function Privacy() {
         <header className="legal-header">
           <h1>Privacy Policy</h1>
           <p className="legal-meta">
-            Effective: October 19, 2026 · srvn Digital Inc.
+            Effective: October 19, 2026 · SRVN Digital Inc.
           </p>
         </header>
 
         <section>
           <h2>Who We Are</h2>
           <p>
-            SRVN Digital Inc. (&ldquo;srvn&rdquo;, &ldquo;we&rdquo;,
-            &ldquo;us&rdquo;, &ldquo;our&rdquo;) operates the srvn mobile
+            SRVN Digital Inc. (&ldquo;SRVN&rdquo;, &ldquo;we&rdquo;,
+            &ldquo;us&rdquo;, &ldquo;our&rdquo;) operates the SRVN mobile
             application and website. This policy explains what we collect, why
             we collect it, and the choices you have. For any privacy enquiry,
             contact{" "}
@@ -113,7 +113,7 @@ export default function Privacy() {
         <section>
           <h2>Restaurant Information</h2>
           <p>
-            Restaurant details, ratings, and review excerpts shown in srvn
+            Restaurant details, ratings, and review excerpts shown in SRVN
             come from third-party sources, including Google. That content
             belongs to its original authors and platforms and is attributed
             where it is shown.
@@ -123,11 +123,11 @@ export default function Privacy() {
         <section>
           <h2>Sharing</h2>
           <p>
-            We share data only with service providers who help us run srvn —
+            We share data only with service providers who help us run SRVN —
             such as cloud hosting, crash reporting (Sentry), and website
             analytics (Vercel) — under
             agreements that limit how they may use it, and when required by
-            law. If srvn is involved in a merger or acquisition, your data may
+            law. If SRVN is involved in a merger or acquisition, your data may
             transfer with the service; we will notify you before a materially
             different policy applies to it.
           </p>
@@ -161,7 +161,7 @@ export default function Privacy() {
         <section>
           <h2>Children</h2>
           <p>
-            srvn is not directed to children under 13, and we do not knowingly
+            SRVN is not directed to children under 13, and we do not knowingly
             collect their information.
           </p>
         </section>
@@ -180,7 +180,7 @@ export default function Privacy() {
         &copy; 2026 SRVN Digital Inc. &nbsp;&middot;&nbsp;
         <Link href="/terms">Terms of Use</Link> &nbsp;&middot;&nbsp;
         <Link href="/support">Support</Link> &nbsp;&middot;&nbsp;
-        <a href="mailto:privacy@srvnapp.com">Contact</a>
+        <Link href="/support">Contact</Link>
       </footer>
     </div>
   );
