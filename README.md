@@ -10,7 +10,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-The website runs at http://localhost:3000. The waitlist API is configured separately with `NEXT_PUBLIC_API_BASE_URL` (local backend: http://localhost:5000). Sharing pages do not call the backend or resolve content.
+The website runs at http://localhost:3000. The waitlist and support APIs are configured separately with `NEXT_PUBLIC_API_BASE_URL` (local backend: http://localhost:5000). Sharing pages do not call the backend or resolve content.
 
 ## Checks
 
@@ -22,7 +22,9 @@ npm test
 npm audit --omit=dev
 ```
 
-`npm test` builds the production bundle and runs the configuration and browser tests.
+`npm test` builds the production bundle with a local fixture API URL and runs the configuration and browser tests. Support API requests are intercepted by the browser tests; no support emails are sent.
+
+The `/support` form posts directly to `${NEXT_PUBLIC_API_BASE_URL}/support`. Set `NEXT_PUBLIC_API_BASE_URL=https://api.srvnapp.com` in Vercel before building for production. The backend must allow the website origin through CORS. The form accepts required first name, last name, email, a subject selected from a dropdown, and message, plus an optional username. The selected topic is sent as the existing `subject` string; no additional backend fields are required. `/contact` redirects to `/support`.
 
 ## Feature documentation
 

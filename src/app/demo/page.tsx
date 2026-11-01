@@ -3,7 +3,7 @@ import Link from "next/link";
 import DemoFlow from "../DemoFlow";
 
 export const metadata: Metadata = {
-  title: "See it in action — Srvn",
+  title: "See it in action — SRVN",
   description:
     "Watch the recommend-by-intent flow as Maya sees it. Type a vibe, get a personalized shortlist of nine spots, ranked first by the database and then re-ranked by the AI agent in seconds.",
 };
@@ -14,7 +14,7 @@ export default function DemoPage() {
       <nav className="nav-top">
         <div className="nav-inner">
           <Link href="/" className="wordmark">
-            Srvn
+            SRVN
           </Link>
           <div className="nav-links">
             <Link href="/" className="nav-link">
@@ -67,7 +67,7 @@ export default function DemoPage() {
       <footer>
         &copy; 2026 SRVN Digital Inc. &nbsp;&middot;&nbsp;
         <Link href="/terms">Terms of Use</Link> &nbsp;&middot;&nbsp;
-        <a href="mailto:hello@srvn.com">Contact</a>
+        <Link href="/support">Contact</Link>
       </footer>
     </div>
   );

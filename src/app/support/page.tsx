@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SupportForm from "./SupportForm";
 
 export const metadata: Metadata = {
-  title: "Support — srvn",
-  description: "Get help with the srvn app.",
+  title: "Support — SRVN",
+  description: "Get help with the SRVN app.",
 };
 
 // This is the page App Store Connect's Support URL points at — keep the
@@ -13,22 +14,26 @@ export default function Support() {
     <div className="container">
       <nav>
         <Link className="nav-logo" href="/">
-          srvn
+          SRVN
         </Link>
         <Link className="back-link" href="/">
           ← Back
         </Link>
       </nav>
 
-      <article className="legal">
+      <main className="legal">
         <header className="legal-header">
           <h1>Support</h1>
-          <p className="legal-meta">
-            Need help with srvn? Email{" "}
-            <a href="mailto:support@srvnapp.com">support@srvnapp.com</a> — we
-            aim to reply within 2 business days.
+          <p>
+            Have a question, found a bug, or want to share feedback? Send us a
+            message below. We aim to reply within 2 business days.
+          </p>
+          <p>
+            You can also email <a href="mailto:support@srvnapp.com">support@srvnapp.com</a>.
           </p>
         </header>
+
+        <SupportForm />
 
         <section>
           <h2>I didn&rsquo;t receive my sign-in code</h2>
@@ -42,9 +47,9 @@ export default function Support() {
         <section>
           <h2>How do I control location access?</h2>
           <p>
-            srvn only uses your location while you&rsquo;re using the app, to
+            SRVN only uses your location while you&rsquo;re using the app, to
             show restaurants near you. You can turn it off under your device
-            Settings → srvn → Location, and browse by city instead.
+            Settings → SRVN → Location, and browse by city instead.
           </p>
         </section>
 
@@ -74,13 +79,13 @@ export default function Support() {
             we&rsquo;ll look into it.
           </p>
         </section>
-      </article>
+      </main>
 
       <footer>
         &copy; 2026 SRVN Digital Inc. &nbsp;&middot;&nbsp;
         <Link href="/terms">Terms of Use</Link> &nbsp;&middot;&nbsp;
         <Link href="/privacy">Privacy Policy</Link> &nbsp;&middot;&nbsp;
-        <a href="mailto:support@srvnapp.com">Contact</a>
+        <Link href="/support">Contact</Link>
       </footer>
     </div>
   );

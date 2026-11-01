@@ -143,7 +143,7 @@ export default function Home() {
       <nav className="nav-top">
         <div className="nav-inner">
           <Link href="/" className="wordmark">
-            Srvn
+            SRVN
           </Link>
           <div className="nav-links">
             <Link href="/demo" className="nav-link">
@@ -163,7 +163,7 @@ export default function Home() {
             <h1>
               Most apps show what&rsquo;s <em>popular</em>.
               <br />
-              Srvn learns what you&rsquo;d <em>actually like</em>.
+              SRVN learns what you&rsquo;d <em>actually like</em>.
             </h1>
             <p>
               An AI dining agent built on a personal taste graph that compounds
@@ -268,7 +268,7 @@ export default function Home() {
       <footer>
         &copy; 2026 SRVN Digital Inc. &nbsp;&middot;&nbsp;
         <Link href="/terms">Terms of Use</Link> &nbsp;&middot;&nbsp;
-        <a href="mailto:hello@srvn.com">Contact</a>
+        <Link href="/support">Contact</Link>
       </footer>
     </div>
   );

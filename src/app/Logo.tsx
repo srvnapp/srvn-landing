@@ -10,7 +10,7 @@ export default function Logo({ size = 32, className }: Props) {
       height={size}
       viewBox="0 0 140 140"
       role="img"
-      aria-label="srvn"
+      aria-label="SRVN"
       className={className}
     >
       <rect width="140" height="140" rx="32" fill="#f78d51" />
