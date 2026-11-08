@@ -1,7 +1,16 @@
 import type { BeforeSendEvent } from "@vercel/analytics/next";
 
 // Keep opaque share links and unknown paths out of analytics, including 404s.
-const PUBLIC_PAGES = new Set(["/", "/demo", "/privacy", "/support", "/terms", "/waitlist"]);
+const PUBLIC_PAGES = new Set([
+  "/",
+  "/demo",
+  "/privacy",
+  "/privacy/fr",
+  "/support",
+  "/terms",
+  "/terms/fr",
+  "/waitlist",
+]);
 
 export function isAnalyticsPage(pathname: string): boolean {
   return PUBLIC_PAGES.has(pathname);
