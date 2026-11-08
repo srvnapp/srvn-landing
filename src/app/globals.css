@@ -726,6 +726,20 @@ footer a:hover {
   padding-top: 2.75rem;
 }
 
+/* Unnumbered intro: must not advance the counter, or every heading would be
+   off by one from the "Section N" references in the text. */
+.legal section.legal-intro {
+  counter-increment: none;
+}
+
+.legal h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-strong);
+  line-height: 1.4;
+  margin: 1.5rem 0 0.625rem;
+}
+
 .legal h2 {
   font-family: var(--font-playfair), Georgia, serif;
   font-size: 1.375rem;
